@@ -9,7 +9,7 @@
          def grypeReportFile = 'grype_report.txt'
 
          // Run Grype and redirect the output to a file
-         sh "/usr/local/bin/grype ${params.GRYPE_OPTION} > ${grypeReportFile}"
+         sh "/usr/local/bin/grype ${params.GRYPE_OPTION} -o json > ${grypeReportFile}"
 
          // You can also archive the report as an artifact
          archiveArtifacts artifacts: "${grypeReportFile}", onlyIfSuccessful: true
