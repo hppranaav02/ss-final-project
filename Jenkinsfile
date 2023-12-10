@@ -4,7 +4,7 @@
      stage('Grype scan') {
       steps {
        // Add Gruype installation path to PATH
-       env.PATH = "${env.PATH}:/usr/local/bin/grype
+       env.PATH = "${env.PATH}:/usr/local/bin/grype"
        
        sh ' grype postgres:9 --scope AllLayers --fail-on=critical'
       }
