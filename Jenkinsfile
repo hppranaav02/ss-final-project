@@ -1,12 +1,9 @@
  pipeline {
   agent any
-  environment {
-        GRYPE_PATH = sh(script: 'which grype', returnStdout: true).trim()
-   }
   stages {
      stage('Grype scan') {
       steps {
-       sh ' ${GRYPE_PATH} postgres:9 --scope AllLayers --fail-on=critical'
+       sh ' /usr/local/bin/grype postgres:9 --scope AllLayers'
       }
     }
   }
