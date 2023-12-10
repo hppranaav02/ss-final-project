@@ -3,6 +3,7 @@
   stages {
      stage('Grype scan') {
       steps {
+       script {
          // Replace 'grype' with the full path to the grype executable if needed
          def grypeParam = params.GRYPE_OPTIONS
        
@@ -15,6 +16,7 @@
 
          // You can also archive the report as an artifact
          archiveArtifacts artifacts: "${grypeReportFile}", onlyIfSuccessful: true
+       }
       }
     }
   }
