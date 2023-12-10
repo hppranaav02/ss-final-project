@@ -16,7 +16,7 @@
 
         sh '''
          curl -X 'POST' \
-  'http://editor.swagger.io/images?force=false&autosubscribe=false' \
+  'http://localhost:8228/images?force=false&autosubscribe=false' \
   -H 'accept: application/json' \
   -H 'x-anchore-account: admin' \
   -H 'Content-Type: application/json' \
