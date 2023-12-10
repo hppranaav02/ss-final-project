@@ -20,5 +20,6 @@
   post {
     always {
      recordIssues enabledForFailure: true, tool: grype()
+    }
   }
 }
