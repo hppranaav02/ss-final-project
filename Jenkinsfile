@@ -1,7 +1,7 @@
  pipeline {
   agent any
   environment {
-        GRYPE_PATH = "$(which grype)"
+        GRYPE_PATH = sh(script: 'which grype', returnStdout: true).trim()
    }
   stages {
      stage('Grype scan') {
