@@ -6,7 +6,7 @@
        script {
          // Replace 'grype' with the full path to the grype executable if needed
        
-         def grypeReportFile = 'grype_report.json'
+         def grypeReportFile = '/Users/pradeep/.jenkins/workspace/sss-test/grype-report.json'
 
          // Run Grype and redirect the output to a file
          sh "/usr/local/bin/grype ${params.GRYPE_OPTION} -o json > ${grypeReportFile}"
