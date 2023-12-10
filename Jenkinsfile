@@ -14,7 +14,7 @@
          // // You can also archive the report as an artifact
          // archiveArtifacts artifacts: "${grypeReportFile}", onlyIfSuccessful: true
 
-        sh '
+        sh "
          curl -X 'POST' \
   'http://editor.swagger.io/images?force=false&autosubscribe=false' \
   -H 'accept: application/json' \
@@ -46,7 +46,7 @@
     }
   }
 }'
-        '
+        "
        }
       }
     }
