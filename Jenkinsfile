@@ -7,7 +7,7 @@
          // Replace 'grype' with the full path to the grype executable if needed
          def grypeParam = params.GRYPE_OPTION
        
-         def grypeCommand = '/usr/local/bin/grype ${grypeParama}'
+         def grypeCommand = '/usr/local/bin/grype ${grypeParam}'
        
          def grypeReportFile = 'grype_report.txt'
 
