@@ -10,7 +10,7 @@
          sh "/usr/local/bin/grype ${params.GRYPE_OPTION} -o json > ${grypeReportFile}"
 
          // You can also archive the report as an artifact
-         archiveArtifacts artifacts: "${grypeReportFile}", onlyIfSuccessful: true
+         // archiveArtifacts artifacts: "${grypeReportFile}", onlyIfSuccessful: true
        }
       }
     }
