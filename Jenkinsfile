@@ -14,7 +14,7 @@
        }
       }
     }
-  }
+
   stage('Anchore Scan') {
    steps {
     script {
@@ -72,6 +72,7 @@
      
     }
    }
+  }
   }
   post {
     always {
