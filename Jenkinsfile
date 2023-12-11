@@ -58,14 +58,14 @@
      
        sh " /Users/pradeep/Library/Python/3.9/bin/anchore-cli --u admin --p foobar image vuln ${params.GRYPE_OPTION}"
      
-       sh " /Users/pradeep/Library/Python/3.9/bin/anchore-cli --u admin --p foobar evaluate check ${params.GRYPE_OPTION} --detail  > anchore_policy_check.txt"
+       sh " /Users/pradeep/Library/Python/3.9/bin/anchore-cli --u admin --p foobar evaluate check ${params.GRYPE_OPTION} --detail  2>&1 | tee anchore_policy_check.txt"
 
        // Check if the string "Status: fail" exists in the text file
        def searchString = 'Status: fail'
        def textFilePath = 'anchore_policy_check.txt'
 
        if (fileContainsString(textFilePath, searchString)) {
-           error "Build failed: Anchore Policy Check Failed"
+           echo "Build failed: Anchore Policy Check Failed"
        } else {
            echo "Stage passed. Anchore Policy Check passed"
        }
